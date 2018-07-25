@@ -1,0 +1,32 @@
+.search-bar {
+    margin: 20px;
+    text-align: center;
+}
+.search-bar input {
+    width: 75%;
+}
+.media-object {
+    max-width: 60px;
+    max-height: 60px;
+}
+.follower-detail .details{
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover{
+    background-color: #eee;
+}
+.sort-followers {
+    display: flex; 
+    justify-content: flex-end;
+    margin: 20px;
+}
+.sort-followers input {
+    width: 31%;
+}
