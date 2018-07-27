@@ -4,12 +4,10 @@ const FollowerDetail = ({ follower }) => {
     if (!follower) {
         return <div>Loading...</div>
     }
-    switch(null) {
-        case follower.company:
-        follower.company = "Неизвестно";
-        case follower.location:
-        follower.location = "Неизвестно";
-
+    if (!follower.company) {
+        follower.company = "неизввестно";
+    } else if (!follower.location) {
+        follower.location = "неизвестно";
     }
     return (
         <div className="follower-detail col-md-8">
