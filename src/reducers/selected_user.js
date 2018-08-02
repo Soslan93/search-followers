@@ -5,7 +5,7 @@ export default function (state = null, action) {
         case FETCH_FOLLOWER:
             return action.payload.data[0];
         case SELECT_FOLLOWER:
-            return action;
+            return action.payload.data;
     }
     return state;
 }

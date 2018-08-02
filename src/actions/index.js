@@ -15,6 +15,13 @@ export function fetchFollower(username) {
     }
 }
 
-export function selectFollower(followerName) {
-    console.log(followerName);
+export function selectFollower(url) {
+
+    const select = `${url}`;
+    const request = axios.get(select);
+
+    return {
+        type: SELECT_FOLLOWER,
+        payload: request
+    }
 }

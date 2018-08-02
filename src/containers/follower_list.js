@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import FollowerListItem from '../components/follower_list_item';
+import { selectFollower } from '../actions/index';
+import { bindActionCreators } from "redux";
 
 class FollowerList extends Component {
+    constructor(props) {
+        super(props);
+
+        self = this;
+    }
     renderFollowers(followerData) {
         return (
-            <li key={followerData.id} className="list-group-item">
+            <li key={followerData.id} onClick={() => self.props.selectFollower(followerData.url)} className="list-group-item">
                 <div className="follower-list media">
                     <div className="media-left">
                         <img className="media-object" src={followerData.avatar_url} />
@@ -16,6 +22,7 @@ class FollowerList extends Component {
 
                 </div>
             </li>
+
         );
     }
 
@@ -32,4 +39,9 @@ function mapStateToProps({ follower }) {
     return { follower };
 }
 
-export default connect(mapStateToProps)(FollowerList);
+function mapDispatchToProps(dispatch) {
+
+    return bindActionCreators({ selectFollower }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FollowerList);
